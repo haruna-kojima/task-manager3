@@ -63,16 +63,18 @@ Laravel10.X
 
 1. **リポジトリをクローン**
 
-    ```bash
+    ````bash
     git clone https://github.com/haruna-kojima/task-manager3.git
-    ```
+    ````
 
 2. **.envファイルの準備**
-
+    ````
     cp .env.example .env
+    ````
 
 3. **Composer依存パッケージのインストール**
 
+````
 docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
@@ -80,14 +82,18 @@ docker run --rm \
     -e COMPOSER_CACHE_DIR=/tmp/composer_cache \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
+    ````
 
 4. **Laravel Sailの起動**
-
+    ````
     ./vendor/bin/sail up -d
+    ````
 
 5. **アプリケーションキーの生成**
 
+    ````
     ./vendor/bin/sail artisan key:generate
+    ````
 
 6. **データベースのマイグレーションと初期データ投入**
 
@@ -95,12 +101,15 @@ docker run --rm \
 
 7. **フロントエンドのビルド**
 
+    ````
     ./vendor/bin/sail npm install
     ./vendor/bin/sail npm run dev
+    ````
 
 8. **アプリケーションへのアクセス**
-
+    ````
     http://localhost
+    ````
 
 ## テスト実行
 
