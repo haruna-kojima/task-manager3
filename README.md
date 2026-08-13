@@ -68,13 +68,14 @@ Laravel10.X
     ````
 
 2. **.envファイルの準備**
-    ````
+
+    ````bash
     cp .env.example .env
     ````
 
 3. **Composer依存パッケージのインストール**
 
-````
+    ````bash
 docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
@@ -85,29 +86,33 @@ docker run --rm \
     ````
 
 4. **Laravel Sailの起動**
-    ````
+
+    ````bash
     ./vendor/bin/sail up -d
     ````
 
 5. **アプリケーションキーの生成**
 
-    ````
+    ````bash
     ./vendor/bin/sail artisan key:generate
     ````
 
 6. **データベースのマイグレーションと初期データ投入**
 
+    ````bash
     ./vendor/bin/sail artisan migrate --seed
+    ````
 
 7. **フロントエンドのビルド**
 
-    ````
+    ````bash
     ./vendor/bin/sail npm install
     ./vendor/bin/sail npm run dev
     ````
 
 8. **アプリケーションへのアクセス**
-    ````
+
+    ````bash
     http://localhost
     ````
 
